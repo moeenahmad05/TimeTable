@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  About Us.h
 //  TimeTable
 //
 //  Created by moeen ahmad on 5/13/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface About_Us : UIViewController
 
 @end
-

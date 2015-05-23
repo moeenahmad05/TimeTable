@@ -10,15 +10,63 @@
 
 @interface AppDelegate ()
 
+
+
 @end
+
+#define SYSTEM_VERSION_LESS_THAN(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+   
+    
     // Override point for customization after application launch.
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    
+    
+    NSArray *versionArray = [[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."];
+    
+    if ([[versionArray objectAtIndex:0] intValue] >= 8) {
+        
+        // do this if we're runnign iOS 7 or higher
+        if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+            [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+        }
+        
+    } else {
+        
+        // do this if we're running iOS 6 or below
+        
+        
+    }
+    
+#endif
+      
+    
+
+    
+    
     return YES;
 }
+
+
+  
+   
+
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    
+}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

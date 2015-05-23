@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  Setting.h
 //  TimeTable
 //
 //  Created by moeen ahmad on 5/13/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface Setting : UIViewController
 
 @end
-

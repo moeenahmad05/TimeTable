@@ -35,16 +35,24 @@
 		<key>UINavigationBar</key>
 		<dict>
 			<key>Style</key>
-			<string>UIBarStyleDefault</string>
+			<string>UIBarStyleBlack</string>
 			<key>Translucent</key>
-			<false/>
+			<true/>
+			<key>TintColor</key>
+			<dict>
+				<key>Blue</key>
+				<integer>255</integer>
+				<key>Green</key>
+				<integer>85</integer>
+				<key>Red</key>
+				<integer>100</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
